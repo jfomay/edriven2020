@@ -1,15 +1,37 @@
-let array = ["aaa","bbb","ccc","ddd"];
-let index = 0;
-let names = "";
-while(array[index]){
-   names += array[index] + " ";
-    index++;
-}
-console.log(names);
 
-const test3 = () => console.log("Hello World");
-test3();
+var subtotal = document.getElementById("subtotal");
+var amount_paid = document.getElementById("amount_paid");
+var tax = document.getElementById("tax");
+var total = document.getElementById("total");
+var amount_paid = document.getElementById("amount_paid");
+var change = document.getElementById("change");
+var submit = document.getElementById("submit");
 
-const addTwo = (n1 = 0,n2 = 0) => n1 + n2;
-const sum = addTwo(1,2);
-console.log(sum);
+subtotal.addEventListener("change", function(){
+    if(parseInt(subtotal.value) >= 100 && parseInt(subtotal.value) <= 10000){
+        amount_paid.disabled = false;
+        tax.value = (subtotal.value * 0.12);
+        total.value = parseInt(tax.value) + parseInt(subtotal.value);
+        amount_paid.value = total.value;
+        amount_paid.min = total.value;
+        change.value = parseInt(amount_paid.value) - parseInt(total.value);
+        submit.disabled = false;
+        submit.style.backgroundColor = "green";
+    }else{
+        amount_paid.disabled = true;git add .
+        submit.disabled = true;
+        submit.style.backgroundColor = "rgb(168, 16, 16)";
+    }
+})
+
+amount_paid.addEventListener("change", function(){
+    change.value = parseInt(amount_paid.value) - parseInt(total.value);
+    if(parseInt(change.value) >= 0){
+        submit.disabled = false;
+        submit.style.backgroundColor = "green";
+    }
+    else{
+        submit.disabled = true;
+        submit.style.backgroundColor = "rgb(168, 16, 16)";
+    }
+})

@@ -1,16 +1,32 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Preparatory Assement #3</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1 class="h1">Event-Driven Programming</h1>
-    <h2 class="head2">by: James Omay</h2>
-    <h3>Sample Html</h3>
-    <p class="p">this is a sample html file created by James Omay for the purpose of a submission of Preparatory Assement #1</p>
-    <script src="js/my.js"></script>
+    <form action="">
+        <input type="number" name="subtotal" id="subtotal" placeholder="Subtotal" ><label for="Subtotal">User Input from 100 to 10,000</label>
+        <br>
+        <br>
+        <input type="text" name="tax" id="tax" placeholder="Tax" disabled="true"> <label for="tax">+12% Tax</label>
+        <br>
+        <br>
+        <input type="text" name="total" id="total" placeholder="Total" disabled="true"> <label for="total">Subtotal + Tax</label>
+        <br>
+        <br>
+        <input type="number" name="amount_paid" id="amount_paid" placeholder="Amount Paid" disabled="true"> <label for="amount_paid">Minimum is base on Subtotal + Tax</label>
+        <br>
+        <br>
+        <input type="text" name="change" id="change" placeholder="Change" disabled="true"> <label for="change">Amount Paid - Total</label>
+        <br>
+        <br>
+        <button type="submit" disabled = "true" id='submit'>Pay</button>
+    </form>
+    <script src="js/my.js"></script>    
+    
 </body>
 </html>

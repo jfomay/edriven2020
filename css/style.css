@@ -1,21 +1,9 @@
-
-h1{
-    color: red;
+input{
+    text-align: right;
 }
-p{
-    font-size: 30px;
-}
-.head2{
-    color: orange;
-}
-td{
-    text-align: center;
-    border: black solid;
-    padding: 10px;
-}
-thead{
-    font-weight: bold;
-    color: blue;
-    padding: 20px;
-
+#submit{
+    color: white;
+    background-color: rgb(168, 16, 16);
+    width: 100px;
+    height: 30px;
 }
