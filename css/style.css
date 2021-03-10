@@ -1,16 +1,16 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1 class="h1">Event-Driven Programming</h1>
-    <h2 class="head2">by: James Omay</h2>
-    <h3>Sample Html</h3>
-    <p class="p">this is a sample html file created by James Omay for the purpose of a submission of Preparatory Assement #1</p>
-    <script src="js/my.js"></script>
-</body>
-</html>
+table{
+    width: 800px;
+    height: 600px;
+    border: 2px solid black;
+}
+#title{
+    border-bottom: 2px solid black;
+    font-size: larger;
+}
+.body-color{
+    background-color: lightcoral;
+}
+td{
+    border: 1px solid black;
+    text-align: center;
+}

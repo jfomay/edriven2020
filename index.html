@@ -1,20 +1,35 @@
-h1{
-    color: red;
-}
-p{
-    font-size: 30px;
-}
-.head2{
-    color: orange;
-}
-td{
-    text-align: center;
-    border: black solid;
-    padding: 10px;
-}
-thead{
-    font-weight: bold;
-    color: blue;
-    padding: 20px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id='error'></h1>
+    <table id="tbldata" style="border: black 1px solid;">
+            <thead>
+                <tr id='title section'>
+                    <th id ='title' colspan="7"> </th>
+                </tr>
+                <tr>
+                    <th style="border-right: 2px solid black; background-color: red;">Sun</th>
+                    <th style="border-right: 2px solid black">Mon</th>
+                    <th style="border-right: 2px solid black">Tue</th>
+                    <th style="border-right: 2px solid black">Wed</th>
+                    <th style="border-right: 2px solid black">Thu</th>
+                    <th style="border-right: 2px solid black">Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="body">
 
-}
+            </tbody>
+    </table>
+
+    <script src="js/data.js"></script>    
+    
+</body>
+</html>
