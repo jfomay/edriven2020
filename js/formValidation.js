@@ -5,6 +5,7 @@ var item1 = document.getElementById('item1')
 var item2 = document.getElementById('item2')
 var item3 = document.getElementById('item3')
 var item4 = document.getElementById('item4')
+var itemList = [item1, item2, item3, item4]
 var price1 = document.getElementById('price1')
 var price2 = document.getElementById('price2')
 var price3 = document.getElementById('price3')
@@ -39,8 +40,40 @@ var a = [ORNumber,
 newCustomer.addEventListener('show.bs.modal', function(){ //TRIGGER UPON MODAL DISPLAY
     for(var i = 0; i < a.length; i++){
         a[i].value = ''
+        if (i >= 2){
+            a[i].disabled = true
+        }
     }
+    
 })
+
+const request = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian'
+var response 
+fetch (request)
+.then((res) => {
+    let converted = res.json()
+    converted
+    .then((data) => {      
+        response = data
+        for (var i = 0; i < itemList.length; i++){
+            for (var ii = 0; ii < data['meals'].length; ii++){
+                var option = document.createElement("option")
+                var optionTextNode = document.createTextNode(data['meals'][ii]['strMeal'])
+                option.value = data['meals'][ii]['strMeal']
+                option.appendChild(optionTextNode)
+                itemList[i].appendChild(option)
+            }
+        }
+    })
+    .catch((err) =>{
+        console.log(err) 
+    })
+})
+.catch((err) =>{
+    console.log(err)
+})
+
+
 newCustomer.addEventListener('change', function(){ //TRIGGER EVERY CONTENT CHANGE INSIDE MODAL
     if(ORNumber.value != '' && customerName.value != ''){
         item1.disabled = false
@@ -690,5 +723,3 @@ qty4.addEventListener('change', function(){
     }
     
 })
-
-
