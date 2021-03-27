@@ -23,17 +23,20 @@ if(data != null){
             else{
                 td.className = 'text-center'
                 if(ii == objectt.length - 1){ //FOR ACTION COLUMN IN TABLE
-                    var anchor = document.createElement('a')
-                    anchor.href = ''
-                    anchor.className = 'viewOrder'
-                    anchor.setAttribute('data-bs-toggle', 'modal')
-                    anchor.setAttribute('data-bs-target', '#viewItem')
-                    var tdTextNode = document.createTextNode('[View]')
-                    anchor.appendChild(tdTextNode)
-                    td.appendChild(anchor)
+
+                    var btn = document.createElement("BUTTON");
+                    btn.setAttribute('data-bs-target', '#viewItem')
+                    btn.innerHTML = "View";    
+                    btn.className = "btn btn-primary mb-2" 
+                    btn.id = "viewOrder"              
+                    document.body.appendChild(btn);
+                    btn.setAttribute('data-bs-toggle', 'modal')
+                    td.appendChild(btn)
                     tr.appendChild(td)
                     tbody.appendChild(tr)  
+
                 }
+
                 else if(ii == objectt.length - 2){ //FOR TOTAL COLUMN IN TABLE
                     var result = data[i][objectt[objectt.length - 1]]
                     var tdTextNode = document.createTextNode(result.toFixed(2))
@@ -41,6 +44,7 @@ if(data != null){
                     tr.appendChild(td)
                     tbody.appendChild(tr)                     
                 }
+
                 else{ //FOR ORDER # AND CUSTOMER NAME COLUMNS IN TABLE
                     var tdTextNode = document.createTextNode(data[i][objectt[ii]])
                     td.appendChild(tdTextNode)
